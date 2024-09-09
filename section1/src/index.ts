@@ -1,2 +1,1 @@
-console.log('hello ts')
-const a : number = 1
+const a = 1

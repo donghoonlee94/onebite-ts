@@ -1,0 +1,17 @@
+{
+  // 컴파일 할 위치 설정 tsc src/index.ts > tsx 
+  "include": ["src"],
+  "compilerOptions": {
+    // 컴파일 후 변환되는 JS 버전
+    "target": "ESNext",
+    "module": "ESNext",
+    "outDir": "dist",
+    "strict": false,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+  },
+  // ts-node는 기본적으로 common-js를 사용한다.
+  "ts-node": {
+    "esm": true
+  }
+}
