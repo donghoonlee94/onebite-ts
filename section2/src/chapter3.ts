@@ -6,7 +6,7 @@ let user : { id: number; name: string } = {
 }
 
 
-let dog: { name: string; color: string } = {
+let dog: { readonly name: string; color: string } = {
     name: '왈왈',
     color: 'brown'
 }

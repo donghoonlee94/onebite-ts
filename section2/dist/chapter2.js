@@ -10,4 +10,10 @@ let doubleArr = [
 // 튜플, 길이와 타입이 고정된 배열
 let tup1 = [1, 2];
 let tup2 = [1, '2', true];
+const users = [
+    ['일', 1],
+    ['이', 2],
+    ['삼', 3],
+    ['사', 4]
+];
 export {};
