@@ -55,3 +55,77 @@ function login(user: User) {
   //     console.log(`${user.name}님 현재까지 ${user.visitCount}번 방문하셨습니다.`);
   //   }
 }
+
+/**
+ * 복습
+ */
+
+// 비동기 작업의 결과를 처리하는 객체
+
+// 로딩 중 -> 콘솔에 로딩 출력
+// 실패 -> 에러 출력
+// 성공 -> 데이터 출력
+function processResult(task: AsyncTast) {
+  switch (task.state) {
+    case "LOADING": {
+      console.log("로딩 중");
+      break;
+    }
+    case "FAILED": {
+      console.log(`에러 ${task.error.message}`);
+      break;
+    }
+    case "SUCCESS": {
+      console.log(`성공 ${task.response.data}`);
+      break;
+    }
+  }
+}
+
+type LoadingTast = {
+  state: "LOADING";
+};
+
+type FailedTask = {
+  state: "FAILED";
+  error: {
+    message: string;
+  };
+};
+
+type SuccessTask = {
+  state: "SUCCESS";
+  response: {
+    data: string;
+  };
+};
+
+type AsyncTast = LoadingTast | FailedTask | SuccessTask;
+
+// type AsyncTast = {
+//   state: "LOADING" | "FAILED" | "SUCCESS";
+//   error?: {
+//     message: string;
+//   };
+//   response?: {
+//     data: string;
+//   };
+// };
+
+const loading: AsyncTast = {
+  state: "LOADING",
+};
+
+const failed: AsyncTast = {
+  state: "FAILED",
+  error: {
+    message: "원인",
+  },
+};
+
+const success: AsyncTast = {
+  state: "SUCCESS",
+  response: {
+    data: "데이터",
+  },
+};
