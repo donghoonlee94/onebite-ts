@@ -102,6 +102,9 @@ type SuccessTask = {
 
 type AsyncTast = LoadingTast | FailedTask | SuccessTask;
 
+// error나 response는 없을 수 있기 때문에 옵셔널 체이닝 등을 쓰지 않을 경우 에러가 생긴다.
+// task.error?.message
+// 서로소 유니온 타입으로 설정하여 해결할 수 있다.
 // type AsyncTast = {
 //   state: "LOADING" | "FAILED" | "SUCCESS";
 //   error?: {

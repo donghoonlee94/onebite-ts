@@ -10,6 +10,8 @@ interface Person {
   sayHi(a: number, b: number): void;
 }
 
+// 이름은 IPerson 같이 표기하면 헝가리언 표기법이나 JS에서는 잘 쓰지 않음.
+
 // type Func = {
 //   (): void;
 // };
